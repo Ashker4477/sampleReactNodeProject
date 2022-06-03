@@ -15,8 +15,8 @@ app.use(cors({
 app.use(express.json());
 
 
-app.get('/movies/data', async (req, res)=>{
-    res.status(200).send(movies)
+app.get('/movies/data', (req, res)=>{
+    return res.send(movies)
 });
 app.use(express.static(path.join(__dirname, "..", "frontend", "build")));
 

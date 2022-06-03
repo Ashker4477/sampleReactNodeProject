@@ -9,10 +9,10 @@ function App() {
   useEffect(()=>{
     getMoviesData();
   },[]);
-
+  
   async function getMoviesData(){
     const response = await axios.get('http://localhost:5000/movies/data');
-    setMoviesList(response.data);
+    setMoviesList(await response.data);
   }
 
   return (
